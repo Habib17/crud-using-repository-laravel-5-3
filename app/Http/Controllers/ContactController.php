@@ -63,7 +63,15 @@ class ContactController extends Controller
      * @apiParam {Varchar} email email of contact
      * @apiParam {Varchar} address email of address
      * @apiParam {Float} phone phone of contact
-     * @apiSuccess {Number} id id of contact
+     * @apiSuccessExample {json} Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "created": "True",
+     *     }
+     * @apiError {json} created-False:
+     *     
+     *   
+     *     
      */
     public function store(ContactCreateRequest $request)
     {
@@ -81,8 +89,13 @@ class ContactController extends Controller
      * @apiParam {Varchar} address address of contact
      * @apiParam {Float} phone phone of contact
      *
+     * @apiSuccessExample {json} Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "update": "True",
+     *     }
      *
-     * @apiError EmailHasRegitered The Email must diffrerent.
+     * @apiError {json} update-False:
      */
     public function update(ContactEditRequest $request, $id)
     {
@@ -95,10 +108,13 @@ class ContactController extends Controller
      * @apiGroup Contact
      *
      * @apiParam {Number} id id of contact
+     * @apiSuccessExample {json} Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "delete": "True",
+     *     }
      *
-     *
-     * @apiError ContactNotFound The <code>id</code> of the Contact was not found.
-     * @apiError NoAccessRight Only authenticated Admins can access the data.
+     * @apiError {json} delete-False:
      */
     public function destroy($id)
     {

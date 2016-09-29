@@ -17,5 +17,4 @@ interface ContactInterface {
      * @return mixed
      */
     public function paginate($limit = 10, $page = 1, array $column, $field, $search = '');
-
 }
